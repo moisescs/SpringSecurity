@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/cadastrar}" th:object="${usuario}" method="post">
+		<input type="text" name="nome" th:field="*{nomeCompleto}"/>
+		<input type="text" name="login" th:field="*{login}"/>
+		<input type="password" name="senha" th:field="*{senha}"/>
+		
+		<button type="submit">Cadastrar</button>
+	</form>
+</body>
+</html>

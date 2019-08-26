@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Logado!</h1>
+	Fazer logout
+	<a href="/logout">Fazer logout</a>
+	
+		<div>
+		<table>
+			<thead>
+				<th>Nome</th>
+				<th>Login</th>
+				<th>Senha</th>
+				<th>Alterar</th>
+				<th>Deletar</th>
+			</thead>
+			<tbody th:each="usuario : ${usuarios}">
+				<tr> 
+					<td><spam th:text="${usuario.nomeCompleto}"></spam></td>
+					<td><spam th:text="${usuario.login}"></spam></td>
+					<td>********</td>
+					<td><a th:href="${(#mvc.url('UC#alterar').arg(0, usuario.login)).build()}">Editar</a></td>
+					<td><a th:href="${(#mvc.url('UC#deletar').arg(0, usuario.login)).build()}">X</a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+</html>
